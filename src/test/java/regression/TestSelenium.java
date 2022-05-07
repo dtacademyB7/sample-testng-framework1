@@ -1,16 +1,18 @@
-package seleniumExamples;
+package regression;
 
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 public class TestSelenium {
 
@@ -26,7 +28,7 @@ public class TestSelenium {
         driver.manage().window().maximize();
     }
 
-    @Test (priority = 1)
+    @Test
     public  void test1() throws InterruptedException {
         driver.get("https://www.google.com/");
 
@@ -38,7 +40,7 @@ public class TestSelenium {
     }
 
 
-    @Test (priority = 2)
+    @Test
     public  void locate() throws InterruptedException {
         driver.get("https://www.google.com/");
 
@@ -64,7 +66,7 @@ public class TestSelenium {
     }
 
 
-    @Test (priority = -200)
+    @Test
     public  void test3() throws InterruptedException {
         driver.get("https://www.google.com/");
 
@@ -93,7 +95,7 @@ public class TestSelenium {
     }
 
 
-    @Test (priority = 1000)
+    @Test
     public  void test5() throws InterruptedException {
         driver.get("http://qa-duotify.us-east-2.elasticbeanstalk.com/register.php");
         System.out.println(driver.findElement(By.tagName("h1")).getCssValue("color"));
