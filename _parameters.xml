@@ -3,15 +3,16 @@
 <suite name="Regression Suite">
 
     <test name="Ui tests">
+        
+        <parameter name="LINK" value="http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx"></parameter>
 
         <classes>
 
-            <class name="seleniumExamples.TestSelenium">
+            <class name="testnExamples.HardVsSoftAssertions">
                 <methods>
 
-                    <include name="test1"/>
-                    <include name="test3"/>
-                    <include name="test5"/>
+                    <include name="login"/>
+                   
                 </methods>
 
 

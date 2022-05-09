@@ -1,16 +1,15 @@
 package seleniumExamples;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchFrameException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -18,6 +17,8 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+//@Ignore
+//@Test (enabled = false)
 public class Waits {
 
     WebDriver driver;
@@ -87,6 +88,30 @@ public class Waits {
 
 
 
+
+    }
+
+//    @Ignore
+//    @Test (enabled = false)
+    public  void actionsClass2(){
+
+        // Actions class - Advanced user actions
+
+        Actions actions =  new Actions(driver);
+
+        driver.get("https://www.amazon.com/");
+        WebElement link = driver.findElement(By.id("nav-link-accountList"));
+
+        // How do you hover over an element with a mouse in Selenium?
+
+//        actions.moveToElement(link).build().perform();
+
+
+        //   ElementNotInteractableException - when element is on the html but not interactable (hidden, invisible, disabled)
+
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();",driver.findElement(By.xpath("//a[@href='/gp/subs/primeclub/account/homepage.html?ref_=nav_AccountFlyout_prime']")) );
+
+//        driver.findElement(By.xpath("//a[@href='/gp/subs/primeclub/account/homepage.html?ref_=nav_AccountFlyout_prime']")).click();
 
     }
 }
